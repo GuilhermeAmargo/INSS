@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <title>Calculadora de INSS e IR</title>
 </head>
 <body>
@@ -10,10 +14,10 @@
     <h1>Cálculo do INSS e IR</h1>
     <form onsubmit="return calcularImpostos()">
         <label for="salario_bruto">Salário Bruto:</label>
-        <input type="number" id="salario_bruto" name="salario_bruto" required>
+        <p><input type="number" id="salario_bruto" name="salario_bruto" required></p>
         <br>
         <label for="dependentes">Número de Dependentes:</label>
-        <input type="number" id="dependentes" name="dependentes" required>
+        <p><input type="number" id="dependentes" name="dependentes" required></p>
         <br>
         <button type="submit">Calcular</button>
     </form>
