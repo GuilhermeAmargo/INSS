@@ -2,18 +2,24 @@ function calcularImpostos() {
     const salarioBruto = parseFloat(document.getElementById('salario_bruto').value);
     const dependentes = parseInt(document.getElementById('dependentes').value);
     let aliquotaINSS;
+    let deducaoINSS;
     if (salarioBruto <= 1412) {
         aliquotaINSS = 0.075;
+        deducaoINSS = 0;
     } else if (salarioBruto <= 2666.68) {
         aliquotaINSS = 0.09;
+        deducaoINSS = 21.18;
     } else if (salarioBruto <= 4000.03) {
         aliquotaINSS = 0.12;
+        deducaoINSS = 101.18;
     } else if (salarioBruto <= 7786.02) {
         aliquotaINSS = 0.14;
+        deducaoINSS = 181.18;
     } else {
         aliquotaINSS = 0.14;
+        deducaoINSS = 181.18;
     }
-    const valorINSS = salarioBruto * aliquotaINSS;
+    const valorINSS = salarioBruto * aliquotaINSS - deducaoINSS;
     document.getElementById('valor_inss').textContent = valorINSS.toFixed(2);
     const baseCalculo = salarioBruto - valorINSS - (dependentes * 189.59);
     let aliquotaIR;
